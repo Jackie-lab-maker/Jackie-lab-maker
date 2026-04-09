@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Robot Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000000;
+            overflow: hidden;
+            font-family: monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        #canvas {
+            line-height: 1;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+            font-size: 15px;
+            user-select: none;
+            white-space: pre;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas"></div>
+    
+    <script>
+        const canvas = document.getElementById('canvas');
+        let width = 90;
+        let height = 50;
+        let grid = [];
+        let time = 0;
+        
+        function initGrid() {
+            grid = [];
+            for (let y = 0; y < height; y++) {
+                let row = [];
+                for (let x = 0; x < width; x++) {
+                    row.push(' ');
+                }
+                grid.push(row);
+            }
+        }
+        
+        function setChar(x, y, char) {
+            const px = Math.floor(x);
+            const py = Math.floor(y);
+            if (px >= 0 && px < width && py >= 0 && py < height) {
+                grid[py][px] = char;
+            }
+        }
+        
+        function drawRobot(centerX, centerY, scale, legPhase, armPhase) {
+            const s = (x, y) => ({
+                x: centerX + x * scale,
+                y: centerY + y * scale
+            });
+            
+            const bodyBob = Math.sin(legPhase * 2) * 0.5 * scale;
+            const bodyTilt = Math.sin(legPhase) * 0.3;
+            const tilt = Math.floor(bodyTilt * scale);
+            const baseY = bodyBob;
+            
+            // Antenna
+            let pos = s(3 + tilt, -18 + baseY);
+            setChar(pos.x, pos.y, '│');
+            pos = s(3 + tilt, -19 + baseY);
+            setChar(pos.x, pos.y, '│');
+            pos = s(2 + tilt, -20 + baseY);
+            setChar(pos.x, pos.y, '╱');
+            pos = s(3 + tilt, -20 + baseY);
+            setChar(pos.x, pos.y, '─');
+            pos = s(4 + tilt, -21 + baseY);
+            setChar(pos.x, pos.y, '◉');
+            pos = s(5 + tilt, -21 + baseY);
+            setChar(pos.x, pos.y, '○');
+            pos = s(6 + tilt, -21 + baseY);
+            setChar(pos.x, pos.y, '∘');
+            
+            // Head
+            pos = s(-2 + tilt, -17 + baseY);
+            setChar(pos.x, pos.y, '┌');
+            for (let i = -1; i <= 7; i++) {
+                pos = s(i + tilt, -17 + baseY);
+                setChar(pos.x, pos.y, '─');
+            }
+            pos = s(8 + tilt, -17 + baseY);
+            setChar(pos.x, pos.y, '┐');
+            pos = s(9 + tilt, -17 + baseY);
+            setChar(pos.x, pos.y, '╱');
+            pos = s(10 + tilt, -17 + baseY);
+            setChar(pos.x, pos.y, '┐');
+            
+            for (let i = 9; i <= 10; i++) {
+                pos = s(i + tilt, -16 + baseY);
+                setChar(pos.x, pos.y, '│');
+            }
+            
+            const headRow1 = [-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            const headChars1 = ['│', '█', '▓', '▓', '▒', '▒', '▒', '▒', '░', '░', '░', '▒', '│'];
+            headRow1.forEach((x, idx) => {
+                pos = s(x + tilt, -16 + baseY);
+                setChar(pos.x, pos.y, headChars1[idx]);
+            });
+            
+            const headChars2 = ['│', '█', '▓', '◉', '◉', '▒', '▒', '▒', '◉', '◉', '░', '▒', '│'];
+            headRow1.forEach((x, idx) => {
+                pos = s(x + tilt, -15 + baseY);
+                setChar(pos.x, pos.y, headChars2[idx]);
+            });
+            
+            const headChars3 = ['│', '█', '▓', '▓', '▒', '═', '═', '═', '▒', '░', '░', '▒', '│'];
+            headRow1.forEach((x, idx) => {
+                pos = s(x + tilt, -14 + baseY);
+                setChar(pos.x, pos.y, headChars3[idx]);
+            });
+            
+            pos = s(-2 + tilt, -13 + baseY);
+            setChar(pos.x, pos.y, '└');
+            for (let i = -1; i <= 7; i++) {
+                pos = s(i + tilt, -13 + baseY);
+                setChar(pos.x, pos.y, '─');
+            }
+            pos = s(8 + tilt, -13 + baseY);
+            setChar(pos.x, pos.y, '┘');
+            pos = s(9 + tilt, -13 + baseY);
+            setChar(pos.x, pos.y, '╲');
+            pos = s(10 + tilt, -13 + baseY);
+            setChar(pos.x, pos.y, '┘');
+            
+            // Neck
+            pos = s(2 + tilt, -12 + baseY);
+            setChar(pos.x, pos.y, '▓');
+            pos = s(3 + tilt, -12 + baseY);
+            setChar(pos.x, pos.y, '▒');
+            pos = s(4 + tilt, -12 + baseY);
+            setChar(pos.x, pos.y, '░');
+            
+            // Body
+            pos = s(-4 + tilt, -11 + baseY);
+            setChar(pos.x, pos.y, '┌');
+            for (let i = -3; i <= 9; i++) {
+                pos = s(i + tilt, -11 + baseY);
+                setChar(pos.x, pos.y, '─');
+            }
+            pos = s(10 + tilt, -11 + baseY);
+            setChar(pos.x, pos.y, '┐');
+            pos = s(11 + tilt, -11 + baseY);
+            setChar(pos.x, pos.y, '╱');
+            pos = s(12 + tilt, -11 + baseY);
+            setChar(pos.x, pos.y, '─');
+            pos = s(13 + tilt, -11 + baseY);
+            setChar(pos.x, pos.y, '┐');
+            
+            for (let i = 11; i <= 13; i++) {
+                pos = s(i + tilt, -10 + baseY);
+                setChar(pos.x, pos.y, '│');
+            }
+            
+            for (let row = 0; row < 7; row++) {
+                const bodyChars = ['│', '█', '█', '▓', '▓', 
+                    row === 2 || row === 4 ? '●' : '▓',
+                    row === 1 ? '◊' : '▒',
+                    row === 1 ? '◊' : '▒',
+                    row === 1 ? '◊' : '▒',
+                    row === 2 || row === 4 ? '●' : '▒',
+                    '▒', '░', '░', '░', '░', '▒', '▒', '│'];
+                const xPositions = [-4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+                xPositions.forEach((x, idx) => {
+                    pos = s(x + tilt, -10 + row + baseY);
+                    setChar(pos.x, pos.y, bodyChars[idx]);
+                });
+            }
+            
+            pos = s(-4 + tilt, -3 + baseY);
+            setChar(pos.x, pos.y, '└');
+            for (let i = -3; i <= 9; i++) {
+                pos = s(i + tilt, -3 + baseY);
+                setChar(pos.x, pos.y, '─');
+            }
+            pos = s(10 + tilt, -3 + baseY);
+            setChar(pos.x, pos.y, '┘');
+            pos = s(11 + tilt, -3 + baseY);
+            setChar(pos.x, pos.y, '╲');
+            pos = s(12 + tilt, -3 + baseY);
+            setChar(pos.x, pos.y, '─');
+            pos = s(13 + tilt, -3 + baseY);
+            setChar(pos.x, pos.y, '┘');
+            
+            // Arms - COMPLETE waving animation
+            const isWaving = armPhase > 0;
+            
+            if (isWaving) {
+                const waveProgress = armPhase / (Math.PI * 2);
+                const waveSide = Math.sin(armPhase * 4) * 3;
+                
+                let armRaise;
+                if (waveProgress < 0.3) {
+                    armRaise = waveProgress / 0.3;
+                } else if (waveProgress < 0.7) {
+                    armRaise = 1;
+                } else {
+                    armRaise = 1 - ((waveProgress - 0.7) / 0.3) * 0.7;
+                }
+                
+                // LEFT ARM WAVING
+                pos = s(-4 + tilt, -9 + baseY);
+                setChar(pos.x, pos.y, '╟');
+                
+                const leftShoulderY = -9 - Math.floor(armRaise * 3);
+                pos = s(-5 + tilt, leftShoulderY + baseY);
+                setChar(pos.x, pos.y, '╱');
+                pos = s(-6 + tilt, leftShoulderY - 1 + baseY);
+                setChar(pos.x, pos.y, '█');
+                pos = s(-6 + tilt, leftShoulderY - 2 + baseY);
+                setChar(pos.x, pos.y, '▓');
+                
+                const leftElbowY = leftShoulderY - 3;
+                pos = s(-7 + tilt, leftElbowY + baseY);
+                setChar(pos.x, pos.y, '●');
+                pos = s(-8 + tilt, leftElbowY - 1 + baseY);
+                setChar(pos.x, pos.y, '╱');
+                pos = s(-9 + tilt, leftElbowY - 2 + baseY);
+                setChar(pos.x, pos.y, '▓');
+                pos = s(-10 + tilt, leftElbowY - 3 + baseY);
+                setChar(pos.x, pos.y, '▒');
+                
+                const leftHandX = -11 + Math.floor(waveSide * scale);
+                const leftHandY = leftElbowY - 3;
+                
+                // Left hand
+                for (let hy = -1; hy <= 1; hy++) {
+                    pos = s(leftHandX - 1 + tilt, leftHandY + hy + baseY);
+                    setChar(pos.x, pos.y, hy === -1 ? '┌' : '│');
+                    pos = s(leftHandX + tilt, leftHandY + hy + baseY);
+                    setChar(pos.x, pos.y, hy === -1 ? '─' : '█');
+                    pos = s(leftHandX + 1 + tilt, leftHandY + hy + baseY);
+                    setChar(pos.x, pos.y, hy === -1 ? '┐' : '│');
+                }
+                
+                // Fingers
+                for (let fx = -1; fx <= 1; fx++) {
+                    pos = s(leftHandX + fx + tilt, leftHandY + 2 + baseY);
+                    setChar(pos.x, pos.y, '│');
+                }
+                
+                // RIGHT ARM WAVING
+                pos = s(13 + tilt, -9 + baseY);
+                setChar(pos.x, pos.y, '╢');
+                
+                const rightShoulderY = -9 - Math.floor(armRaise * 3);
+                pos = s(14 + tilt, rightShoulderY + baseY);
+                setChar(pos.x, pos.y, '╲');
+                pos = s(15 + tilt, rightShoulderY - 1 + baseY);
+                setChar(pos.x, pos.y, '█');
+                pos = s(15 + tilt, rightShoulderY - 2 + baseY);
+                setChar(pos.x, pos.y, '▒');
+                
+                const rightElbowY = rightShoulderY - 3;
+                pos = s(16 + tilt, rightElbowY + baseY);
+                setChar(pos.x, pos.y, '●');
+                pos = s(17 + tilt, rightElbowY - 1 + baseY);
+                setChar(pos.x, pos.y, '╲');
+                pos = s(18 + tilt, rightElbowY - 2 + baseY);
+                setChar(pos.x, pos.y, '▒');
+                pos = s(19 + tilt, rightElbowY - 3 + baseY);
+                setChar(pos.x, pos.y, '░');
+                
+                const rightHandX = 20 - Math.floor(waveSide * scale);
+                const rightHandY = rightElbowY - 3;
+                
+                // Right hand
+                for (let hy = -1; hy <= 1; hy++) {
+                    pos = s(rightHandX - 1 + tilt, rightHandY + hy + baseY);
+                    setChar(pos.x, pos.y, hy === -1 ? '┌' : '│');
+                    pos = s(rightHandX + tilt, rightHandY + hy + baseY);
+                    setChar(pos.x, pos.y, hy === -1 ? '─' : '▒');
+                    pos = s(rightHandX + 1 + tilt, rightHandY + hy + baseY);
+                    setChar(pos.x, pos.y, hy === -1 ? '┐' : '│');
+                }
+                
+                // Fingers
+                for (let fx = -1; fx <= 1; fx++) {
+                    pos = s(rightHandX + fx + tilt, rightHandY + 2 + baseY);
+                    setChar(pos.x, pos.y, '│');
+                }
+            } else {
+                // Arms at rest
+                const leftArmX = [-4, -5, -6, -6, -6, -6, -6, -6, -6, -5];
+                const leftArmY = [-9, -9, -9, -8, -7, -6, -5, -4, -3, -3];
+                const leftArmChars = ['╟', '─', '█', '▓', '▓', '▒', '▒', '░', '┌', '┐'];
+                leftArmX.forEach((x, idx) => {
+                    pos = s(x + tilt, leftArmY[idx] + baseY);
+                    setChar(pos.x, pos.y, leftArmChars[idx]);
+                });
+                
+                const rightArmX = [13, 14, 15, 15, 15, 15, 15, 15, 16];
+                const rightArmY = [-9, -9, -9, -8, -7, -6, -5, -4, -4];
+                const rightArmChars = ['╢', '─', '▒', '▒', '░', '░', '░', '┌', '┐'];
+                rightArmX.forEach((x, idx) => {
+                    pos = s(x + tilt, rightArmY[idx] + baseY);
+                    setChar(pos.x, pos.y, rightArmChars[idx]);
+                });
+            }
+            
+            // Legs
+            const leftLegPhase = Math.sin(legPhase);
+            const rightLegPhase = Math.sin(legPhase + Math.PI);
+            
+            const leftUpperBend = Math.max(-1, Math.min(1, leftLegPhase * 1.5));
+            const leftLowerBend = Math.max(-2, Math.min(2, leftLegPhase * 3));
+            
+            for (let i = 0; i < 3; i++) {
+                pos = s(-1 + i + tilt, -2 + baseY);
+                setChar(pos.x, pos.y, i === 0 ? '┌' : i === 1 ? '┬' : '┐');
+                pos = s(-1 + i + tilt, -1 + baseY);
+                setChar(pos.x, pos.y, i === 0 ? '│' : i === 1 ? '▓' : '░');
+            }
+            
+            for (let i = 0; i < 3; i++) {
+                pos = s(-1 + i + Math.floor(leftUpperBend * scale) + tilt, 0 + baseY);
+                setChar(pos.x, pos.y, i === 0 ? '├' : i === 1 ? '┼' : '┤');
+                pos = s(-1 + i + Math.floor(leftLowerBend * scale) + tilt, 1 + baseY);
+                setChar(pos.x, pos.y, i === 0 ? '│' : i === 1 ? '▓' : '░');
+            }
+            
+            for (let i = 0; i < 4; i++) {
+                pos = s(-1 + i + Math.floor(leftLowerBend * scale) + tilt, 2 + baseY);
+                setChar(pos.x, pos.y, i === 0 ? '└' : i === 1 ? '─' : i === 2 ? '┘' : '╲');
+            }
+            
+            const rightUpperBend = Math.max(-1, Math.min(1, rightLegPhase * 1.5));
+            const rightLowerBend = Math.max(-2, Math.min(2, rightLegPhase * 3));
+            
+            for (let i = 0; i < 3; i++) {
+                pos = s(4 + i + tilt, -2 + baseY);
+                setChar(pos.x, pos.y, i === 0 ? '┌' : i === 1 ? '┬' : '┐');
+                pos = s(4 + i + tilt, -1 + baseY);
+                setChar(pos.x, pos.y, i === 0 ? '│' : i === 1 ? '▓' : '░');
+            }
+            
+            for (let i = 0; i < 3; i++) {
+                pos = s(4 + i + Math.floor(rightUpperBend * scale) + tilt, 0 + baseY);
+                setChar(pos.x, pos.y, i === 0 ? '├' : i === 1 ? '┼' : '┤');
+                pos = s(4 + i + Math.floor(rightLowerBend * scale) + tilt, 1 + baseY);
+                setChar(pos.x, pos.y, i === 0 ? '│' : i === 1 ? '▓' : '░');
+            }
+            
+            for (let i = 0; i < 4; i++) {
+                pos = s(4 + i + Math.floor(rightLowerBend * scale) + tilt, 2 + baseY);
+                setChar(pos.x, pos.y, i === 0 ? '└' : i === 1 ? '─' : i === 2 ? '┘' : '╲');
+            }
+        }
+        
+        function render() {
+            let html = '';
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    html += grid[y][x];
+                }
+                html += '\n';
+            }
+            canvas.textContent = html;
+        }
+        
+        function update() {
+            initGrid();
+            
+            const centerX = width / 2;
+            
+            const walkCloseDuration = 200;
+            const stopDuration = 150;
+            const waveDuration = 100;
+            const walkAwayDuration = 200;
+            const totalDuration = walkCloseDuration + stopDuration + waveDuration + walkAwayDuration;
+            
+            let scale, centerY, legPhase, armPhase;
+            
+            if (time < walkCloseDuration) {
+                const progress = time / walkCloseDuration;
+                scale = 0.35 + progress * 0.45;
+                centerY = height - 20 - (scale - 0.35) * 8;
+                legPhase = time * 0.06;
+                armPhase = 0;
+            } else if (time < walkCloseDuration + stopDuration) {
+                scale = 0.8;
+                centerY = height - 24.4;
+                legPhase = walkCloseDuration * 0.06;
+                armPhase = 0;
+            } else if (time < walkCloseDuration + stopDuration + waveDuration) {
+                scale = 0.8;
+                centerY = height - 24.4;
+                legPhase = walkCloseDuration * 0.06;
+                const waveTime = time - (walkCloseDuration + stopDuration);
+                armPhase = (waveTime / waveDuration) * Math.PI * 2;
+            } else if (time < totalDuration) {
+                const walkTime = time - (walkCloseDuration + stopDuration + waveDuration);
+                const progress = walkTime / walkAwayDuration;
+                scale = 0.8 - progress * 0.45;
+                centerY = height - 24.4 + progress * 10;
+                legPhase = (walkCloseDuration * 0.06) + (walkTime * 0.06);
+                armPhase = 0;
+            } else {
+                time = 0;
+                scale = 0.35;
+                centerY = height - 20;
+                legPhase = 0;
+                armPhase = 0;
+            }
+            
+            drawRobot(centerX, centerY, scale, legPhase, armPhase);
+            
+            time++;
+        }
+        
+        function animate() {
+            update();
+            render();
+            requestAnimationFrame(animate);
+        }
+        
+        initGrid();
+        animate();
+    </script>
+</body>
+</html>
