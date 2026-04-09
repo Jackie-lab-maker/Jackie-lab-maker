@@ -26,8 +26,8 @@ Waterloo MechE Student // ex. OPmobility, Chart Industries
 [![Resume](https://img.shields.io/badge/>>>_ENTER_TERMINAL_FOR_RESUME-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./Resume.pdf)
 <br>
 <br>
+📂 PROJECT_MANIFEST
 <div align="center">
-
 | Project | Stack | Access |
 | :--- | :--- | :--- |
 | **###** | ![C++](https://img.shields.io/badge/C++-000000?style=flat-square&logo=cplusplus) ![ROS](https://img.shields.io/badge/ROS2-000000?style=flat-square&logo=ros) | [**[ REPO ]**](https://github.com/yourusername/project-1) |
