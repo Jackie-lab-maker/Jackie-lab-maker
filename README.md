@@ -19,14 +19,12 @@ Waterloo MechE Student // ex. OPmobility, Chart Industries
 ![Ansys](https://img.shields.io/badge/Ansys-000000?style=for-the-badge&logo=ansys)
 ![Abaqus](https://img.shields.io/badge/Abaqus-000000?style=for-the-badge&logo=dassaultsystemes)
 ![Siemens](https://img.shields.io/badge/PLC%20Programming-000000?style=for-the-badge&logo=siemens)
-
 <br>
 
 <a href="https://jackie-lab-maker.github.io/Jackie-lab-maker/"><img src="robot.gif" width="500" alt="Pixel Robot V — Click to interact" /></a>
 
 <a href="https://jackie-lab-maker.github.io/Jackie-lab-maker/"><img src="https://img.shields.io/badge/>>>_ENTER__TERMINAL-000000?style=for-the-badge&logoColor=white" /></a>
 
-<br>
-<pre>
 [![Resume](https://img.shields.io/badge/Resume-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./Resume.pdf)
-/pre>
+<br>
+
