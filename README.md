@@ -22,7 +22,7 @@ Waterloo MechE Student // ex. OPmobility, Chart Industries
 
 <br>
 
-<a href="https://Jackie-lab-maker.github.io"><img src="robot.gif" width="500" alt="Pixel Robot V — Click to interact" /></a>
+<a href="https://jackie-lab-maker.github.io/Jackie-lab-maker/"><img src="robot.gif" width="500" alt="Pixel Robot V — Click to interact" /></a>
 
 <a href=""><img src="https://img.shields.io/badge/>>>_ENTER__TERMINAL-000000?style=for-the-badge&logoColor=white" /></a>
 
