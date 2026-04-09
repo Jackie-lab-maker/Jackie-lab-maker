@@ -36,8 +36,5 @@ Waterloo MechE Student // ex. OPmobility, Chart Industries
 | **Automated CAD Generator** | ![SolidWorks](https://img.shields.io/badge/VBA-000000?style=flat-square&logo=dassaultsystemes) ![C++](https://img.shields.io/badge/C++-000000?style=flat-square&logo=cplusplus) | [**[ REPO ]**](https://github.com/yourusername/project-4) |
 
 <br>
-
-[![GitHub](https://img.shields.io/badge/>>>_INITIALIZE_FULL_REPOSITORY_INDEX-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername?tab=repositories)
-
 </div>
 
