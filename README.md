@@ -27,4 +27,6 @@ Waterloo MechE Student // ex. OPmobility, Chart Industries
 <a href="https://jackie-lab-maker.github.io/Jackie-lab-maker/"><img src="https://img.shields.io/badge/>>>_ENTER__TERMINAL-000000?style=for-the-badge&logoColor=white" /></a>
 
 <br>
+<pre>
 [![Resume](https://img.shields.io/badge/Resume-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./Resume.pdf)
+/pre>
