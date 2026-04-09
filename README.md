@@ -10,4 +10,4 @@
  Waterloo MechE Student // ex. OPmobility, Chart Industries
 </pre>
 
-[![My Skills](https://skillicons.dev/icons?i=py,cpp,arduino,js,html,css,c,clion,git,latex,matlab,obsidian,vscode&perline=8)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=py,cpp,c,arduino,matlab,vscode,js,html,css,git,latex,obsidian&perline=8)](https://skillicons.dev)
