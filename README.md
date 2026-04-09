@@ -7,6 +7,6 @@
   ▗▄▄▞▘▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▗▄█▄▖▐▙▄▄▖    ▗▄▄▞▘▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘    
                                                                                                
 
-FULL-STACK ROBOTICS ENGINEER // Waterloo MechE
+ Waterloo MechE Student// ex. OPmobility, Chart Industries
 </pre>
 
