@@ -10,8 +10,6 @@
  Waterloo MechE Student // ex. OPmobility, Chart Industries
 </pre>
 
-[![My Skills](https://skillicons.dev/icons?i=py,cpp,c,arduino,matlab,vscode,js,html,css,git,latex,obsidian&perline=8)](https://skillicons.dev)
-
 ![Python](https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-000000?style=for-the-badge&logo=cplusplus&logoColor=white)
 ![SolidWorks](https://img.shields.io/badge/SolidWorks-000000?style=for-the-badge&logo=dassaultsystemes)
