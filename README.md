@@ -13,4 +13,6 @@ Waterloo MechE Student // ex. OPmobility, Chart Industries
 ![C++](https://img.shields.io/badge/C++-000000?style=for-the-badge&logo=cplusplus&logoColor=white)
 ![SolidWorks](https://img.shields.io/badge/SolidWorks-000000?style=for-the-badge&logo=dassaultsystemes)
 ![ABB](https://img.shields.io/badge/RobotStudio-000000?style=for-the-badge&logo=abb)
+![Ansys](https://img.shields.io/badge/Ansys-000000?style=for-the-badge&logo=ansys)
+![Abaqus](https://img.shields.io/badge/Abaqus-000000?style=for-the-badge&logo=dassaultsystemes)
 ![Siemens](https://img.shields.io/badge/PLC%20Programming-000000?style=for-the-badge&logo=siemens)
