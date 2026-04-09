@@ -7,5 +7,5 @@
 ▗▄▄▞▘▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▗▄█▄▖▐▙▄▄▖    ▗▄▄▞▘▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘    
                                                                                                
 
-   FULL-STACK ROBOTICS ENGINEER // Waterloo MechE
+    FULL-STACK ROBOTICS ENGINEER // Waterloo MechE
 </pre>
