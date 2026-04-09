@@ -7,6 +7,6 @@
   ▗▄▄▞▘▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▗▄█▄▖▐▙▄▄▖    ▗▄▄▞▘▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘    
                                                                                                
 
- Waterloo MechE Student// ex. OPmobility, Chart Industries
+ Waterloo MechE Student // ex. OPmobility, Chart Industries
 </pre>
 
