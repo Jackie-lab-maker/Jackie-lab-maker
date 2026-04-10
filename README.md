@@ -25,7 +25,6 @@ Waterloo MechE Student // ex. OPmobility, Chart Industries
 <br><br>
 [![Resume](https://img.shields.io/badge/>>>_ENTER_TERMINAL_FOR_RESUME-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./Resume.pdf)
 <br>
-<br>
 <div align="center">
 
 | Project | Stack | Access |
