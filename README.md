@@ -25,7 +25,7 @@ Waterloo MechE Student // ex. OPmobility, Chart Industries
 <br><br>
 [![Resume](https://img.shields.io/badge/>>>_ENTER_TERMINAL_FOR_RESUME-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./Resume.pdf)
 <a href="./Resume.pdf">
-  <img src="https://img.shields.io/badge/>>>_ENTER_TERMINAL_FOR_RESUME-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" height="50">
+  <img src="https://img.shields.io/badge/>>>_ENTER_TERMINAL_FOR_RESUME-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" height="100">
 </a>
 <br>
 <div align="center">
