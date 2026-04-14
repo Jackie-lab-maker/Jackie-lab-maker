@@ -18,13 +18,13 @@ Waterloo MechE Student // ex. OPmobility, Chart Industries
 ![ABB](https://img.shields.io/badge/RobotStudio-000000?style=for-the-badge&logo=abb)
 ![Ansys](https://img.shields.io/badge/Ansys-000000?style=for-the-badge&logo=ansys)
 ![Abaqus](https://img.shields.io/badge/Abaqus-000000?style=for-the-badge&logo=dassaultsystemes)
-![Siemens](https://img.shields.io/badge/PLC-000000?style=for-the-badge&logo=siemens)
+![Siemens](https://img.shields.io/badge/PLC-000000?style=for-the-badge&logo=siemens) <br><br>
+[![Resume](https://img.shields.io/badge/>>>_Click_ME-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./Resume.pdf)
 <br><br>
 
 <a href="https://v0-ascii-art-portfolio-seven-tawny.vercel.app/"><img src="robot.gif" width="500" alt="Pixel Robot V — Click to interact" /></a>
 <br><br>
 [![Resume](https://img.shields.io/badge/>>>_ENTER_TERMINAL_FOR_RESUME-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./Resume.pdf) <br>
-[![Resume](https://img.shields.io/badge/>>>_Click_ME-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./Resume.pdf)
 </a>
 <br>
 <div align="center">
