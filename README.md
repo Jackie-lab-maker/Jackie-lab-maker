@@ -18,7 +18,7 @@ Waterloo MechE Student // ex. OPmobility, Chart Industries
 ![ABB](https://img.shields.io/badge/RobotStudio-000000?style=for-the-badge&logo=abb)
 ![Ansys](https://img.shields.io/badge/Ansys-000000?style=for-the-badge&logo=ansys)
 ![Abaqus](https://img.shields.io/badge/Abaqus-000000?style=for-the-badge&logo=dassaultsystemes)
-![Siemens](https://img.shields.io/badge/PLC-000000?style=for-the-badge&logo=siemens) <br><br><br><br>
+![Siemens](https://img.shields.io/badge/PLC-000000?style=for-the-badge&logo=siemens) <br><br>
 [![Resume](https://img.shields.io/badge/>>>_Click_MY_FACE-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://v0-ascii-art-portfolio-seven-tawny.vercel.app/)
 <br><br>
 
