@@ -23,7 +23,7 @@ Waterloo MechE Student // ex. OPmobility, Chart Industries
 
 <a href="https://v0-ascii-art-portfolio-seven-tawny.vercel.app/"><img src="robot.gif" width="500" alt="Pixel Robot V — Click to interact" /></a>
 <br><br>
-[![Resume](https://img.shields.io/badge/>>>_ENTER_TERMINAL_FOR_PERSONAL_WEBSITE-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./Resume.pdf) <br>
+[![Resume](https://img.shields.io/badge/>>>_ENTER_TERMINAL_FOR_PERSONAL_WEBSITE-000000?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://v0-ascii-art-portfolio-seven-tawny.vercel.app/) <br>
 </a>
 <br>
 <div align="center">
