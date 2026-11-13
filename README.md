@@ -7,7 +7,7 @@
 ██   ██ ██   ██ ██      ██  ██  ██ ██               ██ ██   ██ ██   ██ ██    ██ 
  █████  ██   ██  ██████ ██   ██ ██ ███████     ███████ ██   ██ ██   ██  ██████  
                                                                                                                                                  
-Waterloo MechE Student // ex. OPmobility, Baker Hughes
+Member of Technical Staff @ Micron // Waterloo MechE // prev OPmobility, Baker Hughes
 </pre>
 
 ![Python](https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white)
